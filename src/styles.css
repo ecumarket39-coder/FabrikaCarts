@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;600&display=swap&subset=cyrillic");
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #ede6d9;
+  --color-fg: #1a1714;
+  --color-surface: #f7f1e8;
+  --color-muted: #6f675c;
+  --color-faint: #8a8175;
+  --color-accent: #2f4a43;
+  --color-accent-fg: #f7f1e8;
+  --color-border: color-mix(in oklab, var(--color-fg) 12%, transparent);
+  --color-border-strong: color-mix(in oklab, var(--color-fg) 22%, transparent);
+  --color-danger: #9a3b2a;
+  --color-ring: #2f4a43;
+
+  --font-sans: "Golos Text", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Unbounded", "Golos Text", system-ui, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-card: 0 1px 0 color-mix(in oklab, var(--color-fg) 8%, transparent),
+    0 18px 40px -28px color-mix(in oklab, var(--color-fg) 35%, transparent);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
